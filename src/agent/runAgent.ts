@@ -1,5 +1,5 @@
 import { ChatCompletionMessageParam } from "openai/resources/chat/completions";
-import { chatWithTools } from "../llm/openaiProvider";
+import { chatWithTools } from "../llm/openaiProvider.js";
 import { toolMap } from "../tools/index.js";
 
 export async function runAgent(messages: ChatCompletionMessageParam[], maxSteps = 8) {
