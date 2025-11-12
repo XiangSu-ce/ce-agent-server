@@ -1,15 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/server.js"
-    }
+  "buildCommand": "npm run build",
+  "rewrites": [
+    { "source": "/health", "destination": "/api/index" },
+    { "source": "/agent", "destination": "/api/index" },
+    { "source": "/api/(.*)", "destination": "/api/index" }
   ]
 }
